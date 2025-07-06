@@ -1,0 +1,103 @@
+<title>Ticket</title>
+ <style>
+    body {
+      background-color: #fdf2e9;
+      font-family: Arial, sans-serif;
+    }
+    table {
+      background-color: #ffffff;
+      margin-top: 20px;
+    }
+    th {
+      background-color: #ffc107;
+    }
+  </style>
+<body style="background-color: #ed0b69;">
+<center>
+<img src="ani2.jpg">
+<h1>Refreshment</h1>
+<audio autoplay loop hidden>
+        <source src="Dheema Dheema Anirudh Song Ringtone Download - MobCup.Com.Co.mp3"type="audio/mpeg">
+    </audio>
+<h1>🍔 Refreshments Available at the Concert 🍹</h1>
+    <form id="refreshmentForm">
+      <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Price (₹)</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Veg Sandwich</td>
+            <td>Food</td>
+            <td>50</td>
+            <td><input type="number" name="vegSandwich" value="0" min="0"></td>
+          </tr>
+          <tr>
+            <td>Chicken Roll</td>
+            <td>Food</td>
+            <td>80</td>
+            <td><input type="number" name="chickenRoll" value="0" min="0"></td>
+          </tr>
+          <tr>
+            <td>French Fries</td>
+            <td>Food</td>
+            <td>60</td>
+            <td><input type="number" name="fries" value="0" min="0"></td>
+          </tr>
+          <tr>
+            <td>Coca-Cola</td>
+            <td>Beverage</td>
+            <td>30</td>
+            <td><input type="number" name="cola" value="0" min="0"></td>
+          </tr>
+          <tr>
+            <td>Fresh Lime Juice</td>
+            <td>Beverage</td>
+            <td>40</td>
+            <td><input type="number" name="limeJuice" value="0" min="0"></td>
+          </tr>
+          <tr>
+            <td>Coffee</td>
+            <td>Beverage</td>
+            <td>35</td>
+            <td><input type="number" name="coffee" value="0" min="0"></td>
+          </tr>
+        </tbody>
+      </table><br>
+
+      <button type="button" onclick="calculateTotal()">Calculate Total</button>
+    <!-- </form> -->
+
+    <h2 id="totalAmount">Total Amount: ₹0</h2>
+  <!-- </center> -->
+
+  <script>
+    function calculateTotal() {
+      const form = document.getElementById("refreshmentForm");
+      const prices = {
+        vegSandwich: 50,
+        chickenRoll: 80,
+        fries: 60,
+        cola: 30,
+        limeJuice: 40,
+        coffee: 35
+      };
+
+      let total = 0;
+      for (let item in prices) {
+        const quantity = parseInt(form.elements[item].value) || 0;
+        total += quantity * prices[item];
+      }
+
+      document.getElementById("totalAmount").textContent = "Total Amount: ₹" + total;
+    }
+  </script>
+        <button type="submit">Back</button>&nbsp;
+         <button type="submit"><a href="refpayment.html">Refreshment Payment</a></button>
+    </form>
+  </center>
